@@ -1,0 +1,69 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <p class="h3 text-primary fw-bold">HR Employees
+                <a class="btn bg-primary btn-sm" routerLink="/human-resources/add"><i class="fa fa-plus-circle"></i>New</a>
+            </p>
+            <p class="fst-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" placeholder="Search Employee" type="text">
+                            </div>
+                            <div class="col">
+                                <input class="btn btn-outline-dark" type="submit" value="Search">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Cards-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card list-group-item-danger shadow-lg">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img atl="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlp3nhXkH2m0YfPeSf8WV15lsvE7O_7Igw3A&usqp=CAU" class="employee-img">
+                        </div>
+                        <div class="col-sm-7">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    Employee ID: <span class="fw-bold">EmployeeID</span>
+                                </li>
+                                <li class="list-group-item">
+                                    First Name: <span class="fw-bold">FirstName</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Last Name: <span class="fw-bold">LastName</span>
+                                </li>
+                                <li class="list-group-item">
+                                    Last Name: <span class="fw-bold">Job Title</span>
+                                </li>
+                                <li class="list-group-item">
+                                     Department: <span class="fw-bold">Department</span>       
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-1 d-flex flex-column justify-content-center align-items-center">
+                            <a routerLink="/human-resources/view/" class="btn btn-warning my-1">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a routerLink="/human-resources/edit/" class="btn btn-primary my-1">
+                                <i class="fa fa-pen"></i>
+                            </a>
+                            <button class="btn btn-danger my-1">
+                                <i class="fa fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

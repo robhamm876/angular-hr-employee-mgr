@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+body{
+   font-family: 'Ubuntu', sans-serif !important;
+   background-color: #fcebe7 !important; 
+}
+
+.employee-img
+{
+    width:130px;
+    border-radius:50%;
+}
+.employee-img-lrg
+{
+    width:200px;
+    border-radius:50%;
+}
