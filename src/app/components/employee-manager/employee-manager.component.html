@@ -22,11 +22,13 @@
         </div>
     </div>
 </div>
+<!--<pre>{{employee | json}}</pre>-->
+
 <!--Cards-->
-<div class="container">
+<div class="container mt-3" *ngIf="!loading && employee.length > 0">
     <div class="row">
-        <div class="col-md-6">
-            <div class="card list-group-item-danger shadow-lg">
+        <div class="col-md-6" *ngFor="let emp of employee">
+            <div class="card list-group-item-danger shadow-lg my-2">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-4">
@@ -35,7 +37,7 @@
                         <div class="col-sm-7">
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    Employee ID: <span class="fw-bold">EmployeeID</span>
+                                    Employee ID: <span class="fw-bold">{{employee.FirstName}}</span>
                                 </li>
                                 <li class="list-group-item">
                                     First Name: <span class="fw-bold">FirstName</span>
