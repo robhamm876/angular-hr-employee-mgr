@@ -10,8 +10,8 @@ const routes: Routes = [
   {path : '', redirectTo: 'human-resources/admin', pathMatch : 'full'},
   {path : 'human-resources/admin', component : EmployeeManagerComponent},
   {path: 'human-resources/add', component : AddEmployeeComponent},
-  {path: 'human-resources/edit', component : EditEmployeeComponent},
-  {path: 'human-resources/view', component : ViewEmployeeComponent},
+  {path: 'human-resources/edit/:id', component : EditEmployeeComponent},
+  {path: 'human-resources/view/:id', component : ViewEmployeeComponent},
   {path: '**', component : PageNotFoundComponent}
 ];
 

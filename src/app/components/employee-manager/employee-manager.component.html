@@ -24,6 +24,22 @@
 </div>
 <!--<pre>{{employee | json}}</pre>-->
 
+<!--Loading--->
+<div *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>
+
+<!--Error--->
+<div *ngIf="!loading && errorMessage">
+   <div class="container">
+    <div class="row">
+        <div class="col">
+            <p class="h4 text-danger fw-bold">{{errorMessage}}</p>
+        </div>
+    </div>
+   </div> 
+</div>
+
 <!--Cards-->
 <div class="container mt-3" *ngIf="!loading && employee.length > 0">
     <div class="row">
@@ -32,29 +48,32 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-4">
-                            <img atl="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlp3nhXkH2m0YfPeSf8WV15lsvE7O_7Igw3A&usqp=CAU" class="employee-img">
+                            <img atl="" [src]="emp.PhotoUrl" class="employee-img">
                         </div>
                         <div class="col-sm-7">
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    Employee ID: <span class="fw-bold">{{employee.FirstName}}</span>
+                                    Employee ID: <span class="fw-bold">{{emp.id}}</span>
                                 </li>
                                 <li class="list-group-item">
-                                    First Name: <span class="fw-bold">FirstName</span>
+                                    First Name: <span class="fw-bold">{{emp.FirstName}}</span>
                                 </li>
                                 <li class="list-group-item">
-                                    Last Name: <span class="fw-bold">LastName</span>
+                                    Last Name: <span class="fw-bold">{{emp.LastName}}</span>
                                 </li>
                                 <li class="list-group-item">
-                                    Last Name: <span class="fw-bold">Job Title</span>
+                                    Last Name: <span class="fw-bold">{{emp.Email}}</span>
                                 </li>
                                 <li class="list-group-item">
-                                     Department: <span class="fw-bold">Department</span>       
+                                    Last Name: <span class="fw-bold">{{emp.JobPosition}}</span>
+                                </li>
+                                <li class="list-group-item">
+                                     Department: <span class="fw-bold">{{emp.DepartmentId}}</span>       
                                 </li>
                             </ul>
                         </div>
                         <div class="col-sm-1 d-flex flex-column justify-content-center align-items-center">
-                            <a routerLink="/human-resources/view/" class="btn btn-warning my-1">
+                            <a routerLink="/human-resources/view/" class="btn btn-warning my-1" routerLink="/human-resources/view/{{emp.id}}">
                                 <i class="fa fa-eye"></i>
                             </a>
                             <a routerLink="/human-resources/edit/" class="btn btn-primary my-1">

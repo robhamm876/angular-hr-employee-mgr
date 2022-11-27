@@ -4,5 +4,6 @@ export interface IEmployee{
     LastName: string;
     Email: string;
     DepartmentId: string;
-    JobPosition: string
+    JobPosition: string;
+    PhotoUrl :string;
 }
