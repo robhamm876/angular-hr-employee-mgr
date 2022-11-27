@@ -62,6 +62,11 @@ export class HREmployeeService{
         return this.httpClient.get<IDepartment>(dataURL).pipe(catchError(this.handleError));
     }
 
+    public getDepartmentByEmp(emplpoyee: IEmployee) : Observable<IDepartment>{
+        let dataURL : string = '${this.serverUrl}/department/${DepartmentId}';
+        return this.httpClient.get<IDepartment>(dataURL).pipe(catchError(this.handleError));
+    }
+
     //Error Handling
     public handleError (error:HttpErrorResponse){
         let errorMessage:string='';

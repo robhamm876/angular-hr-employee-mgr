@@ -10,26 +10,27 @@
 <div class="container">
     <div class="row">
         <div class="com-sm-4">
-            <form>
+            <form (submit)="createEmployee()">
                 <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="FirstName">
+                    <input [(ngModel)]="employee.FirstName" name="FirstName" type="text" class="form-control" required="true" placeholder="FirstName">
                 </div>
                 <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="LastName">
+                    <input type="text" [(ngModel)]="employee.LastName" name="LastName" class="form-control" required="true" placeholder="LastName">
                 </div>
                 <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="Job Title">
+                    <input type="text" [(ngModel)]="employee.JobPosition" name="JobPosition" class="form-control" required="true" placeholder="Job Title">
                 </div>
                 <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="Email">
+                    <input type="text" [(ngModel)]="employee.Email" name="JobPosition" class="form-control" placeholder="Email">
                 </div>
                 <div class="mb-2">
-                    <select name="" id="" class="form-control">
+                    <select name="" id="" [(ngModel)]="employee.DepartmentId" name="DepartmentId" class="form-control">
                         <option value="">Select a Department</option>
+                        <option [value]="dept.DepartmentId" *ngFor="let dept of department">{{dept.DepartmentName}}</option>
                     </select>
                 </div>
                 <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="Photo Url">
+                    <input type="text" [(ngModel)]="employee.PhotoUrl" name="Photo" class="form-control" placeholder="Photo Url">
                 </div>
                 <div class="mb-2">
                     <input type="submit" class="btn btn-primary"  value="Create">

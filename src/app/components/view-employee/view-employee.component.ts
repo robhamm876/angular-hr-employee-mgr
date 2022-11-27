@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
+import { IDepartment } from 'src/app/models/IDepartment';
 import { IEmployee } from 'src/app/models/IEmployee';
 import { HREmployeeService } from 'src/app/services/hremployee.service';
 
@@ -14,6 +15,7 @@ export class ViewEmployeeComponent implements OnInit {
   public id: string | null = null;
   public employee: IEmployee = {} as IEmployee;
   public errorMessage: string | null = null; 
+  public department: IDepartment = {} as IDepartment;
 
   constructor(private activatedRoute : ActivatedRoute, private hrEmployeeService : HREmployeeService) { 
 
@@ -31,6 +33,9 @@ export class ViewEmployeeComponent implements OnInit {
       this.hrEmployeeService.getEmployee(this.id).subscribe((data : IEmployee) => {
           this.employee = data;
           this.loading = false;
+          this.hrEmployeeService.getDepartmentByEmp(data).subscribe((data:IDepartment) => {
+              this.department = data;
+          })
        }, (error: string | null) => {
           this.errorMessage = error;
           this.loading = false;
@@ -39,6 +44,8 @@ export class ViewEmployeeComponent implements OnInit {
 
   }
 
-
+  public isNotEmpty(){
+    return Object.keys(this.employee).length > 0 && Object.keys(this.department).length > 0;
+  }
 
 }

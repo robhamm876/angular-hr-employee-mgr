@@ -7,18 +7,19 @@
     </div>
 </div>
 <!--Contact Details-->
-<div class="container">
+<div class="container" *ngIf="isNotEmpty()">
     <div class="row align-items-center">
         <div class="col-sm-4">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlp3nhXkH2m0YfPeSf8WV15lsvE7O_7Igw3A&usqp=CAU" alt="" class="employee-img-lrg">
+            <img [src]="employee.id" alt="" class="employee-img-lrg">
         </div>
         <div class="col-sm-6">
             <ul class="list-group">
-                <li class="list-group-item list-group-item-primary">Employee Number :<span class="fw-bold">Employee Number</span></li> 
-                <li class="list-group-item list-group-item-primary">First Name: <span class="fw-bold">First Name</span></li> 
-                <li class="list-group-item list-group-item-primary">Last Name: <span class="fw-bold">Last Name</span></li> 
-                <li class="list-group-item list-group-item-primary">Job Title: <span class="fw-bold">Job Title</span></li> 
-                <li class="list-group-item list-group-item-primary">Department: <span class="fw-bold">Department</span></li> 
+                <li class="list-group-item list-group-item-primary">Employee Number :<span class="fw-bold">{{employee.id}}</span></li> 
+                <li class="list-group-item list-group-item-primary">First Name: <span class="fw-bold">{{employee.FirstName}}</span></li> 
+                <li class="list-group-item list-group-item-primary">Last Name: <span class="fw-bold">{{employee.LastName}}</span></li> 
+                <li class="list-group-item list-group-item-primary">Email: <span class="fw-bold">{{employee.Email}}</span></li> 
+                <li class="list-group-item list-group-item-primary">Job Title: <span class="fw-bold">{{employee.JobPosition}}</span></li> 
+                <li class="list-group-item list-group-item-primary">Department: <span class="fw-bold">{{department.DepartmentName}}</span></li> 
             </ul>
         </div>
     </div>

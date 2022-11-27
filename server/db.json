@@ -1,0 +1,33 @@
+{
+    "employee":[
+       {
+          "rowid":0,
+          "firstName":"jon",
+          "lastName":"doe",
+          "email":null,
+          "photoUrl":null,
+          "departmentId":"1a4b4e3d-23b3-4f95-9255-6618f2a98c43",
+          "jobPosition":null,
+          "id":"11b399da-b03a-4f89-8fd0-f40b457519eb",
+          "department":null
+       }
+    ],
+    "department":[
+       {
+          "rowid":0,
+          "departmentName":"IT",
+          "departmentId":"1a4b4e3d-23b3-4f95-9255-6618f2a98c43",
+          "employee":[
+             
+          ]
+       },
+       {
+          "rowid":0,
+          "departmentName":"IT",
+          "departmentId":"023c8e82-677c-4b07-b06c-f22ab97f7536",
+          "employee":[
+             
+          ]
+       }
+    ]
+ }
