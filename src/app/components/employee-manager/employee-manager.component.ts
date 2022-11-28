@@ -19,6 +19,7 @@ export class EmployeeManagerComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true;
+    
     this.employeeService.getAllEmployees().subscribe((data : IEmployee[]) => {
       this.employee = data;
       this.loading = false;
@@ -26,6 +27,7 @@ export class EmployeeManagerComponent implements OnInit {
       this.errorMessage = error;
       this.loading = false;
     });
+
   }
 
 }

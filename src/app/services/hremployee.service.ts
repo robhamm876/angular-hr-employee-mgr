@@ -10,40 +10,41 @@ import { IDepartment } from '../models/IDepartment';
 })
 
 export class HREmployeeService{
-    private static serverUrl : string = '';
+    //private static serverUrl : string = 'http://localhost:9000/';
 
     constructor(private httpClient: HttpClient){
     }
 
     //Create an employee
     public createEmployee(employee : IEmployee):Observable<IEmployee>{
-        let dataURL : string = '${this.serverUrl}/employee';
+        let dataURL : string = 'http://localhost:9000/employee';
         return this.httpClient.post<IEmployee>(dataURL, employee).pipe(catchError(this.handleError));
     }
 
 
     //Update an employee
     public updateEmployee(employee : IEmployee, id :string):Observable<IEmployee>{
-        let dataURL : string = '${this.serverUrl}/employee/${id}';
+        let dataURL : string = 'http://localhost:9000/employee/' + id;
         return this.httpClient.put<IEmployee>(dataURL, employee).pipe(catchError(this.handleError));
     }
 
     //Delete an employee
     public deleteEmployee(id :string):Observable<{}>{
-        let dataURL : string = '${this.serverUrl}/employee/${id}';
+        let dataURL : string = 'http://localhost:9000/employee/' + id;
         return this.httpClient.delete<{}>(dataURL).pipe(catchError(this.handleError));
     }
 
     //get all Employees
     public getAllEmployees() : Observable<IEmployee[]>{
-        let dataURL: string = '${this.serverUrl}/employee';
+        let dataURL: string = 'http://localhost:9000/employee';
+        console.log(dataURL);
         return this.httpClient.get<IEmployee[]>(dataURL).pipe(catchError(this.handleError));
         
     }
 
     //get single employee
     public getEmployee(id :string) : Observable<IEmployee>{
-        let dataURL : string = '${this.serverUrl}/employee/${id}';
+        let dataURL : string = 'http://localhost:9000/employee/' + id;
         return this.httpClient.get<IEmployee>(dataURL).pipe(catchError(this.handleError));
     }
 
@@ -51,19 +52,19 @@ export class HREmployeeService{
     //Departments
     //get all Departments
     public getAllDepartments() : Observable<IDepartment[]>{
-        let dataURL: string = '${this.serverUrl}/department';
+        let dataURL: string = 'http://localhost:9000/department';
         return this.httpClient.get<IDepartment[]>(dataURL).pipe(catchError(this.handleError));
         
     }
 
      //get single department
-     public getDepartment(department: IDepartment) : Observable<IDepartment>{
-        let dataURL : string = '${this.serverUrl}/department/${DepartmentId}';
+     public getDepartment(departmentId : string) : Observable<IDepartment>{
+        let dataURL : string = 'http://localhost:9000/department/' + departmentId;
         return this.httpClient.get<IDepartment>(dataURL).pipe(catchError(this.handleError));
     }
 
     public getDepartmentByEmp(emplpoyee: IEmployee) : Observable<IDepartment>{
-        let dataURL : string = '${this.serverUrl}/department/${DepartmentId}';
+        let dataURL : string = 'http://localhost:9000/department/' + emplpoyee.departmentId;
         return this.httpClient.get<IDepartment>(dataURL).pipe(catchError(this.handleError));
     }
 

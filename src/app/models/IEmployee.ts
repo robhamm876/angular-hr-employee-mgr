@@ -1,9 +1,11 @@
+import { Guid } from 'guid-typescript';
+
 export interface IEmployee{
-    id? :string;
-    FirstName : string;
-    LastName: string;
-    Email: string;
-    DepartmentId: string;
-    JobPosition: string;
-    PhotoUrl :string;
+    id? :Guid;
+    firstName : string;
+    lastName: string;
+    email: string;
+    departmentId: string;
+    jobPosition: string;
+    photoUrl :string;
 }

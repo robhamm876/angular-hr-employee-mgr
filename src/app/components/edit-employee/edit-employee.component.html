@@ -6,27 +6,29 @@
         </div>
     </div>
 </div>
+
 <!--Edit Employee Details-->
 <div class="container">
     <div class="row">
         <div class="com-sm-4">
-            <form>
+            <form (submit) = "submitUpdate()">
                 <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="FirstName">
+                    <input type="text" [(ngModel)]="employee.firstName" class="form-control" [value]="employee.firstName" name="firstName" placeholder="FirstName" required>
                 </div>
                 <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="LastName">
+                    <input type="text" [(ngModel)]="employee.lastName" class="form-control" [value]="employee.lastName" name="lastName" placeholder="LastName" required>
                 </div>
                 <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="Job Title">
+                    <input type="text" [(ngModel)]="employee.email" class="form-control" [value]="employee.email" name="email" placeholder="Email" required>
                 </div>
                 <div class="mb-2">
-                    <select name="" id="" class="form-control">
+                    <select name="" id="" class="form-control" type="text" [(ngModel)]="employee.departmentId" [value]="employee.departmentId">
                         <option value="">Select a Department</option>
+                        <option [value]="dept.departmentId" *ngFor="let dept of department">{{dept.departmentName}}</option>
                     </select>
                 </div>
                 <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="Photo Url">
+                    <input type="text" [(ngModel)]="employee.photoUrl" class="form-control" [value]="employee.photoUrl" name="photo" placeholder="Photo Url" >
                 </div>
                 <div class="mb-2">
                     <input type="submit" class="btn btn-primary"  value="Update">
@@ -35,7 +37,7 @@
             </form>
         </div>
         <div class="col-sm-4">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlp3nhXkH2m0YfPeSf8WV15lsvE7O_7Igw3A&usqp=CAU" alt="" class="contact-img">
+            <img [src]="employee.photoUrl" alt="" class="contact-img">
         </div>
     </div>
 </div>

@@ -48,7 +48,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-4">
-                            <img atl="" [src]="emp.PhotoUrl" class="employee-img">
+                            <img atl="" [src]="emp.photoUrl" class="employee-img">
                         </div>
                         <div class="col-sm-7">
                             <ul class="list-group">
@@ -56,19 +56,16 @@
                                     Employee ID: <span class="fw-bold">{{emp.id}}</span>
                                 </li>
                                 <li class="list-group-item">
-                                    First Name: <span class="fw-bold">{{emp.FirstName}}</span>
+                                    First Name: <span class="fw-bold">{{emp.firstName}}</span>
                                 </li>
                                 <li class="list-group-item">
-                                    Last Name: <span class="fw-bold">{{emp.LastName}}</span>
+                                    Last Name: <span class="fw-bold">{{emp.lastName}}</span>
                                 </li>
                                 <li class="list-group-item">
-                                    Last Name: <span class="fw-bold">{{emp.Email}}</span>
+                                    Email: <span class="fw-bold">{{emp.email}}</span>
                                 </li>
                                 <li class="list-group-item">
-                                    Last Name: <span class="fw-bold">{{emp.JobPosition}}</span>
-                                </li>
-                                <li class="list-group-item">
-                                     Department: <span class="fw-bold">{{emp.DepartmentId}}</span>       
+                                    Job Title: <span class="fw-bold">{{emp.jobPosition}}</span>
                                 </li>
                             </ul>
                         </div>
@@ -76,7 +73,7 @@
                             <a routerLink="/human-resources/view/" class="btn btn-warning my-1" routerLink="/human-resources/view/{{emp.id}}">
                                 <i class="fa fa-eye"></i>
                             </a>
-                            <a routerLink="/human-resources/edit/" class="btn btn-primary my-1">
+                            <a routerLink="/human-resources/edit/" class="btn btn-primary my-1" routerLink="/human-resources/edit/{{emp.id}}">
                                 <i class="fa fa-pen"></i>
                             </a>
                             <button class="btn btn-danger my-1">
