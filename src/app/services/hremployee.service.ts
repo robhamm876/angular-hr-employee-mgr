@@ -1,3 +1,4 @@
+/*Author: Robert Hammond 25-11-2022 */
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { IEmployee } from '../models/IEmployee';
@@ -10,7 +11,7 @@ import { IDepartment } from '../models/IDepartment';
 })
 
 export class HREmployeeService{
-    //private static serverUrl : string = 'http://localhost:9000/';
+    private static serverUrl : string = 'http://localhost:9000/'; /*Define the .net core Api url here*/
 
     constructor(private httpClient: HttpClient){
     }
