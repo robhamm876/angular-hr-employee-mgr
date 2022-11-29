@@ -5,6 +5,7 @@ import { IEmployee } from '../models/IEmployee';
 import { Observable } from 'rxjs/internal/Observable';
 import { catchError, throwError } from 'rxjs';
 import { IDepartment } from '../models/IDepartment';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
     providedIn: 'root'
@@ -19,6 +20,7 @@ export class HREmployeeService{
     //Create an employee
     public createEmployee(employee : IEmployee):Observable<IEmployee>{
         let dataURL : string = 'http://localhost:9000/employee';
+        employee.id = uuidv4();
         return this.httpClient.post<IEmployee>(dataURL, employee).pipe(catchError(this.handleError));
     }
 

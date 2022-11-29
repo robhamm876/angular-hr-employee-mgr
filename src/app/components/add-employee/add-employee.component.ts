@@ -8,6 +8,7 @@ import { IDepartment } from 'src/app/models/IDepartment';
 import { IEmployee } from 'src/app/models/IEmployee';
 import { HREmployeeService } from 'src/app/services/hremployee.service';
 import { Guid } from 'guid-typescript';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-add-employee',
@@ -31,17 +32,15 @@ export class AddEmployeeComponent implements OnInit {
       this.errorMessage = error;
     });
   }
+ 
+ 
 
-  newId() : Guid {
-    return Guid.create();
+  public createEmployee(){
+      this.hremployeeService.createEmployee(this.employee).subscribe((data : IEmployee) => {
+        this.router.navigate(['/']).then();
+      }, (error) => {
+        this.errorMessage = error;
+        this.router.navigate(['/human-resources/add']).then();
+      });
   }
-
-    public createEmployee(){
-        this.hremployeeService.createEmployee(this.employee).subscribe((data : IEmployee) => {
-          this.router.navigate(['/']).then();
-        }, (error) => {
-          this.errorMessage = error;
-          this.router.navigate(['/human-resources/add']).then();
-        });
-    }
 }
